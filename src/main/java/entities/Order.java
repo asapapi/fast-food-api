@@ -23,6 +23,39 @@ public class Order {
     @JsonFormat(pattern = "yyyy-mm-dd hh:mm:ss")
     private LocalDate lastUpdated;
 
+    public Order(String customerName, String description) {
+        this.customerName = customerName;
+        this.description = description;
+    }
+
+    public Order() {
+    }
+
+    public Order(LocalDate createdAt, Status status, String note, LocalDate lastUpdated) {
+        this.createdAt = createdAt;
+        this.status = status;
+        this.note = note;
+        this.lastUpdated = lastUpdated;
+    }
+
+    public Order(Long id, String customerName, LocalDate createdAt, Status status, String description, String note, LocalDate lastUpdated) {
+        this.id = id;
+        this.customerName = customerName;
+        this.createdAt = createdAt;
+        this.status = status;
+        this.description = description;
+        this.note = note;
+        this.lastUpdated = lastUpdated;
+    }
+
+    public Order(String customerName, LocalDate createdAt, Status status, String description, String note, LocalDate lastUpdated) {
+        this.customerName = customerName;
+        this.createdAt = createdAt;
+        this.status = status;
+        this.description = description;
+        this.note = note;
+        this.lastUpdated = lastUpdated;
+    }
 
     public Long getId() {
         return id;
